@@ -58,6 +58,7 @@ def cargar_y_mostrar_imagen(ruta_archivo, label_widget, size):
     
     ruta_real = ruta_archivo 
     
+    
     try:
         img_pil = Image.open(ruta_real)
         img_pil = img_pil.resize(size, Image.Resampling.LANCZOS)
@@ -75,7 +76,7 @@ def cargar_y_mostrar_imagen(ruta_archivo, label_widget, size):
             IMAGEN_ALBUM_TK = None
 
 def cargar_imagen_para_treeview(ruta_archivo):
-    """Carga una imagen para el Treeview, recurriendo al default """
+    #Carga una imagen para el Treeview, recurriendo al default 
     if ruta_archivo in IMAGE_CACHE:
         return IMAGE_CACHE[ruta_archivo]
     
@@ -95,7 +96,7 @@ def cargar_imagen_para_treeview(ruta_archivo):
              return None 
 
 def actualizar_imagen_album(event=None):
-    """Actualiza la previsualización grande al seleccionar una canción."""
+    #Actualiza la previsualización grande al seleccionar una canción.
     interprete = INTERPRETE_SELECCIONADO.get()
     cancion = CANCION_SELECCIONADA.get()
     
@@ -107,7 +108,7 @@ def actualizar_imagen_album(event=None):
     cargar_y_mostrar_imagen(ruta_imagen, LABEL_CARATULA, TAMANO_PREVISUALIZACION)
 
 def actualizar_canciones(event):
-    """Actualiza el Combobox de Canciones."""
+    #Actualiza el Combobox de Canciones.
     interprete = INTERPRETE_SELECCIONADO.get()
     
     if interprete and interprete in CATALOGO:
@@ -130,7 +131,7 @@ def actualizar_canciones(event):
 
 # --- 3. FUNCIONES DE LÓGICA DE PEDIDOS ---
 def realizar_pedido():
-    """Añade la canción a la cola de emisión (Treeview)."""
+    #Añade la canción a la cola de emisión (Treeview).
     global LISTA_PEDIDOS_COLA 
     
     oyente = OYENTE_NOMBRE.get().strip() 

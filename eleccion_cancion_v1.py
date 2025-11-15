@@ -59,7 +59,7 @@ def cargar_y_mostrar_imagen(ruta_archivo, label_widget, size):
         img_pil = Image.open(ruta_real)
         img_pil = img_pil.resize(size, Image.Resampling.LANCZOS)
         IMAGEN_ALBUM_TK = ImageTk.PhotoImage(img_pil)
-        label_widget.config(image=IMAGEN_ALBUM_TK, text="")
+        label_widget.config(image=IMAGEN_ALBUM_TK, text="imagen del album elegido")
     except Exception:
         # Recurre a la imagen por defecto
         try:
